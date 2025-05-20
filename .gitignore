@@ -8,3 +8,17 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# pytest
+.pytest_cache/
+
+# IDE settings
+.idea/
+.vscode/
+*.swp
+*.swo
