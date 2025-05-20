@@ -1,7 +1,5 @@
 import os
 import re
-import sys
-
 from src.postman_generator_mcp.consts.excluded_files import EXCLUDED_ITEMS, Language
 from src.postman_generator_mcp.utils.files import count_lines
 

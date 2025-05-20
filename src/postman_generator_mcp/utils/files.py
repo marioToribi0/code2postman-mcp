@@ -15,3 +15,9 @@ def count_lines(file_path: str) -> int:
             return sum(1 for _ in f)
     except Exception:
         return 0
+
+def is_a_valid_item(item: dict) -> bool:
+    """
+    Check if the item is a valid Postman collection item
+    """
+    return "name" in item and "request" in item
