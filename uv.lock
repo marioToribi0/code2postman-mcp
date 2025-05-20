@@ -48,8 +48,8 @@ wheels = [
 
 [[package]]
 name = "code2postman-mcp"
-version = "0.1.0"
-source = { virtual = "." }
+version = "0.1.2"
+source = { editable = "." }
 dependencies = [
     { name = "loguru" },
     { name = "mcp", extra = ["cli"] },

@@ -1,6 +1,10 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "code2postman-mcp"
-version = "0.1.0"
+version = "0.1.2"
 description = "MCP server for converting code to Postman collections"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -25,6 +29,7 @@ code2postman-mcp = "code2postman_mcp.server:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
+packages = ["code2postman_mcp", "code2postman_mcp.consts", "code2postman_mcp.tools", "code2postman_mcp.utils"]
 
 [project.optional-dependencies]
 test = [
