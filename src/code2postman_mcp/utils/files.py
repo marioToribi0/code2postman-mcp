@@ -1,5 +1,3 @@
-import os
-
 def count_lines(file_path: str) -> int:
     """
     Count the number of lines in a file.

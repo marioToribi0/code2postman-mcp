@@ -1,7 +1,7 @@
 import os
 import json
-from src.postman_generator_mcp.consts.postman_template import POSTMAN_TEMPLATE
-from src.postman_generator_mcp.utils.files import is_a_valid_item
+from code2postman_mcp.consts.postman_template import POSTMAN_TEMPLATE
+from code2postman_mcp.utils.files import is_a_valid_item
 
 async def create_postman_collection(file_path: str, name: str, description: str) -> str:
     """

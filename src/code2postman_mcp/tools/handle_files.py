@@ -1,7 +1,7 @@
 import os
 import re
-from src.postman_generator_mcp.consts.excluded_files import EXCLUDED_ITEMS, Language
-from src.postman_generator_mcp.utils.files import count_lines
+from code2postman_mcp.consts.excluded_files import EXCLUDED_ITEMS, Language
+from code2postman_mcp.utils.files import count_lines
 
 async def get_tree_directory_from_path(path: str, language: str) -> str:
     """
