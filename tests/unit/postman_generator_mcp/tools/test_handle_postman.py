@@ -4,7 +4,7 @@ import pytest
 from unittest.mock import patch, mock_open, MagicMock
 import tempfile
 
-from src.code2postman_mcp.tools.handle_postman import (
+from code2postman_mcp.tools.handle_postman import (
     validate_string,
     validate_dict,
     create_postman_collection,
@@ -99,7 +99,7 @@ class TestAddPostmanCollectionItem:
     @patch("builtins.open", new_callable=mock_open)
     @patch("json.load")
     @patch("json.dump")
-    @patch("src.code2postman_mcp.utils.files.is_a_valid_item", return_value=True)
+    @patch("code2postman_mcp.utils.files.is_a_valid_item", return_value=True)
     async def test_add_item_success(self, mock_valid_item, mock_json_dump, mock_json_load, mock_file):
         """Test adding an item to a collection successfully"""
         file_path = "test_collection.json"
@@ -131,7 +131,7 @@ class TestAddPostmanCollectionItem:
     @patch("builtins.open", new_callable=mock_open)
     @patch("json.load")
     @patch("json.dump")
-    @patch("src.code2postman_mcp.utils.files.is_a_valid_item", return_value=True)
+    @patch("code2postman_mcp.utils.files.is_a_valid_item", return_value=True)
     async def test_add_item_no_items_array(self, mock_valid_item, mock_json_dump, mock_json_load, mock_file):
         """Test adding an item to a collection with no items array"""
         file_path = "test_collection.json"
@@ -157,7 +157,7 @@ class TestAddPostmanCollectionItem:
     @pytest.mark.asyncio
     @patch("builtins.open", new_callable=mock_open)
     @patch("json.load")
-    @patch("src.code2postman_mcp.utils.files.is_a_valid_item", return_value=False)
+    @patch("code2postman_mcp.utils.files.is_a_valid_item", return_value=False)
     async def test_add_invalid_item(self, mock_valid_item, mock_json_load, mock_file):
         """Test adding an invalid item to a collection"""
         file_path = "test_collection.json"
@@ -549,7 +549,7 @@ class TestUpdatePostmanCollectionVariable:
 
 class TestAddPostmanCollectionFolder:
     @pytest.mark.asyncio
-    @patch("src.code2postman_mcp.tools.handle_postman.add_postman_collection_item")
+    @patch("code2postman_mcp.tools.handle_postman.add_postman_collection_item")
     async def test_add_folder_success(self, mock_add_item):
         """Test adding a folder to a collection successfully"""
         file_path = "test_collection.json"
@@ -569,7 +569,7 @@ class TestAddPostmanCollectionFolder:
         assert args[1]["item"] == items
     
     @pytest.mark.asyncio
-    @patch("src.code2postman_mcp.tools.handle_postman.add_postman_collection_item")
+    @patch("code2postman_mcp.tools.handle_postman.add_postman_collection_item")
     async def test_add_folder_no_items(self, mock_add_item):
         """Test adding a folder without items to a collection"""
         file_path = "test_collection.json"
@@ -593,7 +593,7 @@ class TestAddItemToFolder:
     @patch("builtins.open", new_callable=mock_open)
     @patch("json.load")
     @patch("json.dump")
-    @patch("src.code2postman_mcp.utils.files.is_a_valid_item", return_value=True)
+    @patch("code2postman_mcp.utils.files.is_a_valid_item", return_value=True)
     async def test_add_item_to_folder_success(self, mock_valid_item, mock_json_dump, mock_json_load, mock_file):
         """Test adding an item to a folder successfully"""
         file_path = "test_collection.json"
@@ -628,7 +628,7 @@ class TestAddItemToFolder:
     @pytest.mark.asyncio
     @patch("builtins.open", new_callable=mock_open)
     @patch("json.load")
-    @patch("src.code2postman_mcp.utils.files.is_a_valid_item", return_value=False)
+    @patch("code2postman_mcp.utils.files.is_a_valid_item", return_value=False)
     async def test_add_invalid_item_to_folder(self, mock_valid_item, mock_json_load, mock_file):
         """Test adding an invalid item to a folder"""
         file_path = "test_collection.json"
@@ -651,7 +651,7 @@ class TestAddItemToFolder:
     @pytest.mark.asyncio
     @patch("builtins.open", new_callable=mock_open)
     @patch("json.load")
-    @patch("src.code2postman_mcp.utils.files.is_a_valid_item", return_value=True)
+    @patch("code2postman_mcp.utils.files.is_a_valid_item", return_value=True)
     async def test_add_item_to_nonexistent_folder(self, mock_valid_item, mock_json_load, mock_file):
         """Test adding an item to a non-existent folder"""
         file_path = "test_collection.json"

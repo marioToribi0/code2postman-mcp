@@ -21,7 +21,7 @@ classifiers = [
 ]
 
 [project.scripts]
-code2postman-mcp = "src.code2postman_mcp.server:main"
+code2postman-mcp = "code2postman_mcp.server:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

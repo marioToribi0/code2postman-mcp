@@ -2,7 +2,7 @@ import os
 import pytest
 from unittest.mock import patch, mock_open, MagicMock
 
-from src.code2postman_mcp.utils.files import count_lines
+from code2postman_mcp.utils.files import count_lines
 
 
 class TestCountLines:

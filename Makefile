@@ -4,7 +4,10 @@ server:
 test:
 	uv run pytest tests/
 
-.PHONY: server test
+upload:
+	uv run twine upload dist/*
+
+.PHONY: server test upload
 
 
 

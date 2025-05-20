@@ -4,8 +4,8 @@ import tempfile
 import re
 from unittest.mock import patch, mock_open, MagicMock
 
-from src.code2postman_mcp.consts.excluded_files import Language
-from src.code2postman_mcp.tools.handle_files import get_tree_directory_from_path, read_file
+from code2postman_mcp.consts.excluded_files import Language
+from code2postman_mcp.tools.handle_files import get_tree_directory_from_path, read_file
 
 
 class TestGetTreeDirectoryFromPath:
@@ -36,7 +36,7 @@ class TestGetTreeDirectoryFromPath:
         }
 
     @pytest.mark.asyncio
-    @patch("src.code2postman_mcp.tools.handle_files.Language")
+    @patch("code2postman_mcp.tools.handle_files.Language")
     async def test_get_tree_directory_invalid_language(self, mock_language):
         """Test if the function raises ValueError for invalid language"""
         # Set up the mock to correctly handle the comparison and enum value listing
@@ -55,7 +55,7 @@ class TestGetTreeDirectoryFromPath:
 
     @pytest.mark.asyncio
     @patch("os.walk")
-    @patch("src.code2postman_mcp.utils.files.count_lines")
+    @patch("code2postman_mcp.utils.files.count_lines")
     @patch("os.path.basename", return_value="root")
     async def test_get_tree_directory_python(self, mock_basename, mock_count_lines, mock_walk, mock_directory_structure):
         """Test tree directory generation for Python language"""
@@ -89,7 +89,7 @@ class TestGetTreeDirectoryFromPath:
         
     @pytest.mark.asyncio
     @patch("os.walk")
-    @patch("src.code2postman_mcp.utils.files.count_lines")
+    @patch("code2postman_mcp.utils.files.count_lines")
     @patch("os.path.relpath")
     @patch("os.path.basename")
     async def test_get_tree_directory_with_different_languages(self, mock_basename, mock_relpath, 
