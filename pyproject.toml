@@ -1,7 +1,7 @@
 [project]
 name = "code2postman-mcp"
 version = "0.1.0"
-description = "Add your description here"
+description = "MCP server for converting code to Postman collections"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -10,6 +10,21 @@ dependencies = [
     "pytest>=8.3.5",
     "loguru>=0.7.3",
 ]
+authors = [
+    { name="Mario Toribio", email="zen-krypton-derail@duck.com" }
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+code2postman-mcp = "src.code2postman_mcp.server:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
 
 [project.optional-dependencies]
 test = [
