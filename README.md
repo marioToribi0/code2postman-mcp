@@ -4,7 +4,7 @@
 
 ## Overview
 
-Code2Postman MCP is an open-source tool that leverages the Model Context Protocol to help developers quickly generate Postman collections from their codebase. This tool analyzes your code files, identifies API endpoints, and creates structured Postman collections that you can use for testing, documentation, and sharing.
+Code2Postman MCP is an open-source tool that leverages the Model Context Protocol to help developers quickly generate Postman collections from their codebase. This tool analyzes your code files, identifies API endpoints, and creates structured Postman collections that you can use for testing, documentation, and sharing. It is an MCP that generate postman's collection from code and local repositories.
 
 ## Features
 
@@ -102,3 +102,4 @@ To contribute to Code2Postman MCP:
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
